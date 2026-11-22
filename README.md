@@ -46,7 +46,7 @@ Weather Tracker is an interactive web application that allows users to record, m
 
 ## Demo Video
 
-Demo video link: To be added.
+Demo video link: [Watch Weather Tracker Demo](https://drive.google.com/file/d/1rmplQ1a0Tegiy9GjGzr-V8MWOaw8uIHQ/view?usp=sharing)
 
 ## Author
 
