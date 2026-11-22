@@ -1,4 +1,6 @@
 
+%%writefile app.py
+
 # Import libraries
 import streamlit as st
 import pandas as pd
@@ -44,11 +46,10 @@ if uploaded_file is not None:
                 st.sidebar.error("The CSV file is missing required columns.")
 
             else:
-                # Convert dates from supported CSV formats
+                # Convert dates using YYYY-MM-DD format
                 uploaded_data["Date"] = pd.to_datetime(
                     uploaded_data["Date"],
-                    format="mixed",
-                    dayfirst=True,
+                    format="%Y-%m-%d",
                     errors="raise"
                 )
 
@@ -197,7 +198,6 @@ elif page == "Dashboard (Stats)":
         # Calculate temperature statistics using myutils
         avg_temp, min_temp, max_temp = calculate_temperature_stats(df)
 
-
         # Display temperature statistics in three columns
         col1, col2, col3 = st.columns(3)
 
@@ -324,7 +324,6 @@ elif page == "Search":
 
     # Check if weather data is available
     if not df.empty:
-
 
         # Filter observations using myutils
         search_results = filter_weather_by_date(df, search_date)
