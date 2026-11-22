@@ -21,8 +21,7 @@ def filter_weather_by_date(df, selected_date):
     df = df.copy()
     df["Date"] = pd.to_datetime(
         df["Date"],
-        format="mixed",
-        dayfirst=True
+        format="%Y-%m-%d"
     )
 
     filtered_data = df[df["Date"].dt.date == selected_date]
